@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>了解我测试 - 结果</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 20px;
+        }
+        .results-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px;
+            max-width: 600px;
+            margin: 40px auto;
+        }
+        h2 {
+            color: #333;
+        }
+        p {
+            color: #666;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="results-container">
+    <h2>你的测试结果</h2>
+    <p>你的总分是: <span id="total-score"></span>/100</p>
+    <h3>正确答案回顾</h3>
+    <p>1. 我的外号是: A. 安东尼 或 B. 大木（老师）</p>
+    <p>2. 我的专业是: D. 计算机</p>
+    <p>3. 我玩英雄联盟最擅长的位置: D. 射手</p>
+    <p>4. 我的游戏风格: B. 究极仓鼠症，只要是消耗品通关都不可能用一个</p>
+    <p>5. 除了打游戏之外的兴趣爱好: D. 洗碗</p>
+    <p>6. 我最喜欢的味道是: A. 抹茶</p>
+    <p>7. 我最喜欢的游戏公司: C. 卡普空</p>
+    <p>8. 我最喜欢的食物是: C. 鸡翅</p>
+    <p>9. 我不曾获取过的技能: A. 种花</p>
+    <p>10. 我除了打游戏之外的兴趣爱好: D. 洗碗</p>
+</div>
+
+<script>
+window.onload = function() {
+    var score = localStorage.getItem('score'); // 从localStorage获取得分
+    document.getElementById('total-score').textContent = score || '0'; // 如果没有得分则显示0
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>了解我测试 - 第二题</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 20px;
+        }
+        .question-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px;
+            max-width: 600px;
+            margin: 40px auto;
+        }
+        h2 {
+            color: #333;
+        }
+        label {
+            color: #666;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="question-container">
+    <h2>第2题: 我的专业是</h2>
+    <form id="question2-form">
+        <input type="radio" id="gamer" name="major" value="Gamer">
+        <label for="gamer">A. 游戏职业选手</label><br>
+
+        <input type="radio" id="statistics" name="major" value="Statistics">
+        <label for="statistics">B. 统计学</label><br>
+
+        <input type="radio" id="medicine" name="major" value="Medicine">
+        <label for="medicine">C. 医学</label><br>
+
+        <input type="radio" id="computer" name="major" value="Computer">
+        <label for="computer">D. 计算机</label><br>
+
+        <button type="submit">提交答案</button>
+    </form>
+</div>
+
+<!-- 第二题页面的JavaScript部分 -->
+<script>
+    document.getElementById('question2-form').onsubmit = function(event) {
+        event.preventDefault();
+    
+        var selectedAnswer = document.querySelector('input[name="major"]:checked').value;
+        var score = parseInt(localStorage.getItem('score') || '0', 10); // 获取当前分数，如果不存在则为0
+    
+        if (selectedAnswer === "Computer") {
+            score += 10; // 第二题正确，加10分
+        }
+    
+        localStorage.setItem('score', score.toString()); // 更新得分到localStorage
+    
+        window.location.href = 'question3.html'; // 跳转到第三题页面
+    };
+    </script>
+    
+
+</body>
+</html>

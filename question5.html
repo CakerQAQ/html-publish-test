@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>了解我测试 - 第五题</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 20px;
+        }
+        .question-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px;
+            max-width: 600px;
+            margin: 40px auto;
+        }
+        h2 {
+            color: #333;
+        }
+        label {
+            color: #666;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="question-container">
+    <h2>第5题: 我喜欢长发还是短发的女生</h2>
+    <form id="question5-form">
+        <input type="radio" id="longHair" name="hairPreference" value="LongHair">
+        <label for="longHair">A. 长发</label><br>
+
+        <input type="radio" id="shortHair" name="hairPreference" value="ShortHair">
+        <label for="shortHair">B. 短发</label><br>
+
+        <button type="submit">提交答案</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById('question5-form').onsubmit = function(event) {
+        event.preventDefault();
+    
+        var selectedAnswer = document.querySelector('input[name="hairPreference"]:checked').value;
+        var score = parseInt(localStorage.getItem('score') || '0', 10); // 获取当前分数，如果不存在则为0
+    
+        if (selectedAnswer === "LongHair") { // 第五题正确答案是A. 长发
+            score += 10; // 第五题正确，加10分
+        }
+    
+        localStorage.setItem('score', score.toString()); // 更新得分到localStorage
+    
+        window.location.href = 'question6.html'; // 跳转到第六题页面
+    };
+    </script>
+</body>
+</html>

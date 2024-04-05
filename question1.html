@@ -45,7 +45,7 @@
 <body>
 
 <div class="question-container">
-    <h2>我的外号是</h2>
+    <h2>第1题: 我的外号是</h2>
     <form id="question1-form">
         <input type="radio" id="anthony" name="nickname" value="Anthony">
         <label for="anthony">A. 安东尼</label><br>
@@ -64,22 +64,21 @@
 </div>
 
 <script>
-document.getElementById('question1-form').onsubmit = function(event) {
-    event.preventDefault(); // 阻止表单默认提交行为
-
-    var selectedAnswer = document.querySelector('input[name="nickname"]:checked').value;
-    var score = 0;
-
-    if (selectedAnswer === "Anthony" || selectedAnswer === "Teacher") {
-        alert("答案正确！+10分");
-        score += 10;
-    } else {
-        alert("答案错误！");
-    }
-
-    // 此处可以添加代码以实现其他功能，例如跳转到下一题
-};
-</script>
+    document.getElementById('question1-form').onsubmit = function(event) {
+        event.preventDefault();
+    
+        var selectedAnswer = document.querySelector('input[name="nickname"]:checked').value;
+        var score = parseInt(localStorage.getItem('score') || '0', 10); // 获取当前分数，如果不存在则为0
+    
+        if (selectedAnswer === "Anthony" || selectedAnswer === "Teacher") {
+            score += 10; // 第一题正确，加10分
+        }
+    
+        localStorage.setItem('score', score.toString()); // 更新得分到localStorage
+    
+        window.location.href = 'question2.html'; // 跳转到第二题页面
+    };
+    </script>
 
 </body>
 </html>

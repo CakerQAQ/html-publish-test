@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>了解我测试 - 第七题</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 20px;
+        }
+        .question-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px;
+            max-width: 600px;
+            margin: 40px auto;
+        }
+        h2 {
+            color: #333;
+        }
+        label {
+            color: #666;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="question-container">
+    <h2>第7题: 我最喜欢的游戏公司</h2>
+    <form id="question7-form">
+        <input type="radio" id="blizzard" name="favoriteGameCompany" value="Blizzard">
+        <label for="blizzard">A. 暴雪</label><br>
+
+        <input type="radio" id="riot" name="favoriteGameCompany" value="Riot">
+        <label for="riot">B. 拳头</label><br>
+
+        <input type="radio" id="capcom" name="favoriteGameCompany" value="Capcom">
+        <label for="capcom">C. 卡普空</label><br>
+
+        <input type="radio" id="mihoyo" name="favoriteGameCompany" value="Mihoyo">
+        <label for="mihoyo">D. 米哈游</label><br>
+
+        <button type="submit">提交答案</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById('question7-form').onsubmit = function(event) {
+        event.preventDefault();
+    
+        var selectedAnswer = document.querySelector('input[name="favoriteGameCompany"]:checked').value;
+        var score = parseInt(localStorage.getItem('score') || '0', 10); // 获取当前分数，如果不存在则为0
+    
+        if (selectedAnswer === "Capcom") { // 第七题正确答案是C. 卡普空
+            score += 10; // 第七题正确，加10分
+        }
+    
+        localStorage.setItem('score', score.toString()); // 更新得分到localStorage
+    
+        window.location.href = 'question8.html'; // 跳转到第八题页面
+    };
+    </script>
+
+</body>
+</html>

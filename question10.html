@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>了解我测试 - 第十题</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 20px;
+        }
+        .question-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px;
+            max-width: 600px;
+            margin: 40px auto;
+        }
+        h2 {
+            color: #333;
+        }
+        label {
+            color: #666;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="question-container">
+    <h2>第10题: 我除了打游戏之外的兴趣爱好</h2>
+    <form id="question10-form">
+        <input type="radio" id="cooking" name="hobby" value="Cooking">
+        <label for="cooking">A. 做菜</label><br>
+
+        <input type="radio" id="chess" name="hobby" value="Chess">
+        <label for="chess">B. 下棋</label><br>
+
+        <input type="radio" id="reading" name="hobby" value="Reading">
+        <label for="reading">C. 看书</label><br>
+
+        <input type="radio" id="washingDishes" name="hobby" value="WashingDishes">
+        <label for="washingDishes">D. 洗碗</label><br>
+
+        <button type="submit">提交答案</button>
+    </form>
+</div>
+
+<script>
+document.getElementById('question10-form').onsubmit = function(event) {
+    event.preventDefault();
+
+    var selectedAnswer = document.querySelector('input[name="hobby"]:checked').value;
+    var score = parseInt(localStorage.getItem('score') || '0', 10); // 获取当前分数，如果不存在则为0
+
+    if (selectedAnswer === "WashingDishes") { // 第十题正确答案是D. 洗碗
+        score += 10; // 第十题正确，加10分
+    }
+
+    localStorage.setItem('score', score.toString()); // 更新得分到localStorage
+
+    window.location.href = 'results.html'; // 跳转到结果页面
+};
+</script>
+
+</body>
+</html>

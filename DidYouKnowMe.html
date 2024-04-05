@@ -45,18 +45,19 @@
 </head>
 <body>
 
-<div class="intro-container">
-    <h1>来测试一下你有多了解我！</h1>
-    <p>一共有10道从简单到难的选择题，有些题目的答案不只有1个，你选择其中一个正确的答案就能得分。</p>
-    <p>越是了解我的人越能够全面的回答正确更多的题目。</p>
-    <button class="start-btn" onclick="startTest()">开始测试</button>
-</div>
-
-<script>
-function startTest() {
-    window.location.href = 'question1.html'; // 跳转到第一题页面
-}
-</script>
-
-</body>
-</html>
+    <div class="intro-container">
+        <h1>来测试一下你有多了解我！</h1>
+        <p>一共有10道从简单到难的选择题，每道题10分。</p>
+        <p>越是了解我的人越能够全面的回答正确更多的题目。</p>
+        <button class="start-btn" onclick="startTest()">开始测试</button>
+    </div>
+    
+    <script>
+    function startTest() {
+        localStorage.setItem('score', '0'); // 重置总分
+        window.location.href = 'question1.html'; // 跳转到第一题页面
+    }
+    </script>
+    
+    </body>
+    </html>
