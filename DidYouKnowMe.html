@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    .question-container {
+        margin-bottom: 20px;
+    }
+</style>
+</head>
+<body>
+
+<div id="quiz-container">
+    <div class="question-container" id="question1">
+        <p>1. What is the capital of France?</p>
+        <input type="radio" id="paris" name="question1" value="Paris">
+        <label for="paris">Paris</label><br>
+        <input type="radio" id="london" name="question1" value="London">
+        <label for="london">London</label><br>
+        <input type="radio" id="rome" name="question1" value="Rome">
+        <label for="rome">Rome</label><br>
+        <button onclick="submitAnswer('question1')">Submit</button>
+    </div>
+    <!-- More questions can be added in a similar fashion -->
+</div>
+
+<script>
+function submitAnswer(questionId) {
+    var question = document.getElementById(questionId);
+    question.style.display = 'none'; // Hide current question
+
+    // Logic to show next question goes here
+    // For example, you could have an array of question IDs and show the next one in the array
+}
+</script>
+
+</body>
+</html>
