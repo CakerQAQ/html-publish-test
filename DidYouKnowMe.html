@@ -3,39 +3,58 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Quiz</title>
+<title>了解我测试</title>
 <style>
     body {
         font-family: Arial, sans-serif;
+        background-color: #f0f8ff;
+        margin: 0;
+        padding: 20px;
     }
-    .question-container {
-        margin-bottom: 20px;
+    .intro-container {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        padding: 20px;
+        max-width: 600px;
+        margin: 40px auto;
+    }
+    h1 {
+        color: #333;
+        text-align: center;
+    }
+    p {
+        color: #666;
+    }
+    .start-btn {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-top: 20px;
+        font-size: 18px;
+        color: #fff;
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .start-btn:hover {
+        background-color: #0056b3;
     }
 </style>
 </head>
 <body>
 
-<div id="quiz-container">
-    <div class="question-container" id="question1">
-        <p>1. What is the capital of France?</p>
-        <input type="radio" id="paris" name="question1" value="Paris">
-        <label for="paris">Paris</label><br>
-        <input type="radio" id="london" name="question1" value="London">
-        <label for="london">London</label><br>
-        <input type="radio" id="rome" name="question1" value="Rome">
-        <label for="rome">Rome</label><br>
-        <button onclick="submitAnswer('question1')">Submit</button>
-    </div>
-    <!-- More questions can be added in a similar fashion -->
+<div class="intro-container">
+    <h1>来测试一下你有多了解我！</h1>
+    <p>一共有10道从简单到难的选择题，有些题目的答案不只有1个，你选择其中一个正确的答案就能得分。</p>
+    <p>越是了解我的人越能够全面的回答正确更多的题目。</p>
+    <button class="start-btn" onclick="startTest()">开始测试</button>
 </div>
 
 <script>
-function submitAnswer(questionId) {
-    var question = document.getElementById(questionId);
-    question.style.display = 'none'; // Hide current question
-
-    // Logic to show next question goes here
-    // For example, you could have an array of question IDs and show the next one in the array
+function startTest() {
+    window.location.href = 'question1.html'; // 跳转到第一题页面
 }
 </script>
 

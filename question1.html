@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>了解我测试 - 第一题</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f8ff;
+        margin: 0;
+        padding: 20px;
+    }
+    .question-container {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        padding: 20px;
+        max-width: 600px;
+        margin: 40px auto;
+    }
+    h2 {
+        color: #333;
+    }
+    label {
+        color: #666;
+    }
+    button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-top: 20px;
+        font-size: 18px;
+        color: #fff;
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+</style>
+</head>
+<body>
+
+<div class="question-container">
+    <h2>我的外号是</h2>
+    <form id="question1-form">
+        <input type="radio" id="anthony" name="nickname" value="Anthony">
+        <label for="anthony">A. 安东尼</label><br>
+
+        <input type="radio" id="teacher" name="nickname" value="Teacher">
+        <label for="teacher">B. 大木（老师）</label><br>
+
+        <input type="radio" id="xiaowang" name="nickname" value="Xiao Wang">
+        <label for="xiaowang">C. 小王</label><br>
+
+        <input type="radio" id="caker" name="nickname" value="Caker">
+        <label for="caker">D. Caker</label><br>
+
+        <button type="submit">提交答案</button>
+    </form>
+</div>
+
+<script>
+document.getElementById('question1-form').onsubmit = function(event) {
+    event.preventDefault(); // 阻止表单默认提交行为
+
+    var selectedAnswer = document.querySelector('input[name="nickname"]:checked').value;
+    var score = 0;
+
+    if (selectedAnswer === "Anthony" || selectedAnswer === "Teacher") {
+        alert("答案正确！+10分");
+        score += 10;
+    } else {
+        alert("答案错误！");
+    }
+
+    // 此处可以添加代码以实现其他功能，例如跳转到下一题
+};
+</script>
+
+</body>
+</html>
